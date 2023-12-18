@@ -1,0 +1,220 @@
+@import "main.css";
+
+.h1 {
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline overline;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+  line-height: 30px;
+}
+
+p {
+  color: white;
+  background-color: gray;
+  border: 4px solid black;
+  border-style: outset;
+}
+p.h1 {
+  font-size: 25px;
+  color: blue;
+  text-shadow: 3px 4px 1px black;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: grey;
+}
+a:hover {
+  color: red;
+}
+
+p::first-letter {
+  font-size: 40px;
+}
+p::selection {
+  background-color: azure;
+  color: grey;
+}
+abbr::before {
+  content: "I'ts ";
+}
+abbr::after {
+  content: " !";
+}
+.forlist li:nth-child(even) {
+  color: teal;
+}
+.forlist li:nth-child(odd) {
+  color: royalblue;
+}
+
+body {
+  background: linear-gradient(90deg, black 30%, violet, white);
+  color: rgb(255, 255, 255);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+a.fornext {
+  font-size: 35px;
+  text-align: center;
+}
+.main {
+  color: aliceblue;
+  font-size: 10px;
+}
+li {
+  font-size: 2rem;
+}
+/*.overlay {
+  background-color: rgb(0, 0, 0, 0.5);
+  width: 90vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}*/
+.modal {
+  border: 10px solid black;
+  width: 300px;
+  height: 150px;
+  background-color: cornflowerblue;
+  font-size: 20px;
+  color: rgb(5, 0, 0);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  text-align: center;
+  overflow-y: auto;
+  border-style: ridge;
+  border-radius: 40px;
+  animation-name: modalAnimation;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 3;
+  cursor: grab;
+}
+.modal:hover {
+  animation-play-state: paused;
+}
+
+@keyframes modalAnimation {
+  0% {
+    background-color: aqua;
+  }
+  25% {
+    background-color: azure;
+  }
+  50% {
+    background: linear-gradient(100deg, white 30%, violet);
+    transform: scale(1.3);
+  }
+  100% {
+    background-color: cornflowerblue;
+  }
+}
+
+.example {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 3px;
+  border: 10px inset red;
+
+  position: relative;
+
+  border-right: none;
+  border-bottom-width: 20px;
+  border-radius: 20px/40px;
+}
+button:focus {
+  outline: 2px solid aqua; /*граница для кнопки в момент наведения*/
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+
+  /* background-color: gainsboro; */
+  background-color: gainsboro;
+  background-image: url(../Back.jpg);
+  background-size: contain;
+}
+img {
+  border-radius: 50px;
+  filter: drop-shadow(5px 3px 5px rgba(0, 0, 0, 0.5));
+}
+img:hover {
+  filter: blur(2px);
+  filter: contrast(100%);
+  filter: invert(10);
+  filter: saturate(300%);
+}
+.jhinface:hover {
+  /*transform: rotate(60deg); Поворот*/
+  transform: rotate(25deg) scale(0.5) skew(10deg, 10deg);
+}
+.transition {
+  border: 10px inset red;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px/50px;
+  transition-duration: 1s, 2s;
+  transition-property: transform, background-color;
+  transition-delay: 0, 500ms;
+  transition-timing-function: ease-in-out;
+}
+.transition:hover {
+  background-color: blueviolet;
+  transform: scale(1.2);
+}
+
+::placeholder {
+  color: blue;
+  opacity: 1;
+}
+
+.animation {
+  border: 10px inset rgb(16, 203, 38);
+  width: 300px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  margin-left: auto;
+  margin-right: auto;
+}
+.animation:hover {
+  animation-name: myAnimation;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes myAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translatex(100px) translateY(0);
+  }
+  50% {
+    transform: translateX(100px) translateY(100px);
+  }
+  75% {
+    transform: translateX(0) translateY(100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
